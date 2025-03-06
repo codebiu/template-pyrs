@@ -1,5 +1,6 @@
 use std::ffi::c_void;
-use super::Calculator;
+// 更新引用路径
+use super::calculator::Calculator;
 
 #[no_mangle]
 pub extern "C" fn calculator_new() -> *mut c_void {

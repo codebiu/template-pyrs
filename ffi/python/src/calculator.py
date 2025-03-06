@@ -1,16 +1,17 @@
 from ctypes import *
 from typing import Optional
-import os
 import sys
+from pathlib import Path
 
 # 获取动态库路径
 def _get_lib_path() -> str:
+    base_dir = Path(__file__).resolve().parents[3]
     if sys.platform == "win32":
-        return "tempalte_lib.dll"
+        return str(base_dir / 'tempalte_lib' / 'target' / 'release' / 'tempalte_lib.dll')
     elif sys.platform == "darwin":
-        return "libtempalte_lib.dylib"
+        return str(base_dir / 'tempalte_lib' / 'target' / 'release' / 'libtempalte_lib.dylib')
     else:
-        return "libtempalte_lib.so"
+        return str(base_dir / 'tempalte_lib' / 'target' / 'release' / 'libtempalte_lib.so')
 
 # 加载动态库
 _lib = CDLL(_get_lib_path())

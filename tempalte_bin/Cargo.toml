@@ -1,7 +1,10 @@
 [package]
 name = "tempalte_bin"
 version = "0.1.0"
-edition = "2024"
+edition = "2018"
 
+# 如果你有依赖项，可以在这里添加
 [dependencies]
+# 例如：
+# rand = "0.8.5"
 tempalte_lib = { path = "../tempalte_lib" }

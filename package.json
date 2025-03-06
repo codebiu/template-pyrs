@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "test:rust": "cd tempalte_lib && cargo test",
+        "test:python": "cd ffi/python && D:/a_code_lib/anaconda/python.exe src/test_calculator.py",
+        "build:rust": "cd tempalte_lib && cargo build --release",
+        "build:python": "cd ffi/python && python setup.py sdist bdist_wheel",
+        "publish:rust": "cd tempalte_lib && cargo publish",
+        "publish:python": "cd ffi/python && twine upload dist/*"
+    }
+}
